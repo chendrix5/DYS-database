@@ -1,6 +1,9 @@
-from pymongo import MongoClient
+import psycopg2
 
-client = MongoClient('mongodb://localhost:27017')
-
-
-db = client['student_database']
+conn = psycopg2.connect(
+    host = "localhost",
+    port = "5432",
+    database = "DYS_student",
+    user = "postgres",
+    password= "Guitar04"
+)
