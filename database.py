@@ -6,7 +6,7 @@ app = Flask(__name__)
 # Route for rendering the form
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('templates/index.html')
 
 # Route for form submission
 @app.route('/save_form', methods=['POST'])
@@ -16,6 +16,7 @@ def save_form():
     age = int(request.form['age'])
     county = request.form['county']
     year = int(request.form['year'])
+    
 
     # Establish a connection to the PostgreSQL database
     conn = psycopg2.connect(
